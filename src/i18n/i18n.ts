@@ -1,10 +1,10 @@
 
 class i18n {
-    static fallbackLanguage: string = 'en';
+    static readonly fallbackLanguage: string = 'en';
 
-    static currentLanguage: string = 'en';
+    private static currentLanguage: string = 'en';
 
-    static supportedLanguages: string[] = ['en', 'fr'];
+    static readonly supportedLanguages: string[] = ['en', 'fr'];
 
     static supportLanguage(lang: string): boolean{
         return this.supportedLanguages.includes(lang);;
