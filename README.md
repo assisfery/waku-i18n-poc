@@ -77,7 +77,9 @@ const homePageTitle = trans('pages.home');
 
 ---
 
-## Getting Current Language and add in Link Routes
+## Getting Current Language and Using it in Link Routes
+
+To build multi-language-aware navigation, retrieve the current language and use it to construct language-specific route links:
 
 **Example** (from the Nav component):
 ```typescript
