@@ -38,25 +38,9 @@ const frenchWelcome = translateI18n('fr', 'messages', 'welcome');
 **Example** (from the Nav component):
 ```typescript
 import { translate } from './i18n/translate';
-import i18n from './i18n/i18n';
 
-export const Nav = () => {
-    const lang = i18n.getLanguage();
-
-    return <>
-        <Link to="/" className="mt-4 inline-block underline">
-            { translate('pages', 'home') }
-        </Link> | 
-        <Link to="/about" className="mt-4 inline-block underline">
-            { translate('pages', 'about') }
-        </Link> | 
-        <Link to={`/${lang}/contact`} className="mt-4 inline-block underline">
-            { translate('pages', 'contact') }
-        </Link> | 
-        <Link to={`/${lang}/idiom`} className="mt-4 inline-block underline">
-            { translate('pages', 'idiom') }
-        </Link>
-    </>
+export const Sample = () => {
+    return <p> { translate('pages', 'home') } </p>
 }
 ```
 
@@ -93,6 +77,34 @@ const homePageTitle = trans('pages.home');
 
 ---
 
+## Getting Current Language and add in Link Routes
+
+**Example** (from the Nav component):
+```typescript
+import { translate } from './i18n/translate';
+import i18n from './i18n/i18n';
+
+export const Nav = () => {
+    const lang = i18n.getLanguage();
+
+    return <>
+        <Link to="/" className="mt-4 inline-block underline">
+            { translate('pages', 'home') }
+        </Link> | 
+        <Link to="/about" className="mt-4 inline-block underline">
+            { translate('pages', 'about') }
+        </Link> | 
+        <Link to={`/${lang}/contact`} className="mt-4 inline-block underline">
+            { translate('pages', 'contact') }
+        </Link> | 
+        <Link to={`/${lang}/idiom`} className="mt-4 inline-block underline">
+            { translate('pages', 'idiom') }
+        </Link>
+    </>
+}
+```
+
+
 ## Getting Language from Route Parameters
 
 When building multi-language pages with route parameters, extract the language from the route and update the i18n context:
@@ -108,12 +120,7 @@ export default async function Contact({
     lang,
 }: PageProps<'/[lang]'>) {
 
-    if (i18n.supportLanguage(lang)) {
-        i18n.setLanguage(lang);
-    } else {
-        console.warn(`Unsupported language: ${lang}. Falling back to default language.`);
-        i18n.setLanguage(i18n.fallbackLanguage);
-    }
+    i18n.setLanguage(lang);
 
     return (
         <div>
