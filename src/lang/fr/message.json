@@ -1,0 +1,6 @@
+{
+    "welcome": "Bienvenue dans notre application !",
+    "login": "Veuillez vous connecter pour continuer.",
+    "logout": "Vous avez été déconnecté avec succès.",
+    "error": "Une erreur est survenue. Veuillez réessayer plus tard."
+}
