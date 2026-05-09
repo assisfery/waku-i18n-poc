@@ -1,5 +1,6 @@
 import { Link } from 'waku';
 import { Counter } from '../components/counter';
+import { translate } from '../i18n/translate';
 
 export default async function HomePage() {
   const data = await getData();
@@ -21,7 +22,7 @@ const getData = async () => {
   const data = {
     title: 'Waku',
     headline: 'Waku',
-    body: 'Hello world!',
+    body: translate('messages', 'welcome'),
   };
 
   return data;

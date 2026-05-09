@@ -1,4 +1,5 @@
 import { Link } from 'waku';
+import { translate } from '../i18n/translate';
 
 export default async function AboutPage() {
   const data = await getData();
@@ -17,8 +18,8 @@ export default async function AboutPage() {
 
 const getData = async () => {
   const data = {
-    title: 'About',
-    headline: 'About Waku',
+    title: translate('message', 'welcome'),
+    headline: translate('pages', 'about'),
     body: 'The minimal React framework',
   };
 
