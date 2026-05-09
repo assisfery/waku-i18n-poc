@@ -91,6 +91,51 @@ const homePageTitle = trans('pages.home');
 
 ---
 
+## Getting Language from Route Parameters
+
+When building multi-language pages with route parameters, extract the language from the route and update the i18n context:
+
+**Example** (Page component with `[lang]` parameter):
+```typescript
+import i18n from './i18n/i18n';
+import { trans } from './i18n/translate';
+import { Nav } from './components/nav';
+import type { PageProps } from 'waku';
+
+export default async function Contact({
+    lang,
+}: PageProps<'/[lang]'>) {
+
+    if (i18n.supportLanguage(lang)) {
+        i18n.setLanguage(lang);
+    } else {
+        console.warn(`Unsupported language: ${lang}. Falling back to default language.`);
+        i18n.setLanguage(i18n.fallbackLanguage);
+    }
+
+    return (
+        <div>
+            <h1 className="text-4xl font-bold tracking-tight">
+                { trans('pages.contact') }
+            </h1>
+            <p className="mt-4 text-lg">
+                { trans('messages.contact') }
+            </p>
+            <Nav />
+        </div>
+    );
+}
+```
+
+**Key Points**:
+- Extract `lang` from route parameters via `PageProps<'/[lang]'>`
+- Validate language using `i18n.supportLanguage(lang)` before setting
+- Fallback to default language if unsupported
+- Set language context with `i18n.setLanguage(lang)`
+- All child components (like `Nav`) will use this language when calling `translate()` or `trans()`
+
+---
+
 ## Translation File Structure
 
 Organize your translations in `./src/lang/`:
