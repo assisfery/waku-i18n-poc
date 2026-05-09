@@ -2,5 +2,9 @@
     "welcome": "Welcome to our application!",
     "login": "Please log in to continue.",
     "logout": "You have been logged out successfully.",
-    "error": "An error has occurred. Please try again later."
+    "error": "An error has occurred. Please try again later.",
+    "contact": "Feel free to contact us for any inquiries.",
+    "about": "This is a sample application to demonstrate internationalization (i18n) using Waku.",
+    "idiom": "This is an idiom example.",
+    "change_language": "Change Language"
 }

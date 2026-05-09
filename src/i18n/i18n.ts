@@ -1,12 +1,21 @@
 
 class i18n {
+    static fallbackLanguage: string = 'en';
+
     static currentLanguage: string = 'en';
 
     static supportedLanguages: string[] = ['en', 'fr'];
 
+    static supportLanguage(lang: string): boolean{
+        return this.supportedLanguages.includes(lang);;
+    }
+
     static setLanguage(lang: string): void {
-        if (this.supportedLanguages.includes(lang)) {
+        if (this.supportLanguage(lang)) {
             this.currentLanguage = lang;
+        }
+        else {
+            this.currentLanguage = this.fallbackLanguage;
         }
     }
 

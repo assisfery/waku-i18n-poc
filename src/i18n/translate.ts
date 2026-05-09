@@ -21,4 +21,14 @@ function translate(file: string, key: string): string {
     return translateI18n(i18n.getLanguage(), file, key);
 }
 
-export { translateI18n, translate };
+function trans(file_key: string): string {
+    const [file, key] = file_key.split('.');
+
+    if(!file || !key) {
+        return `#${i18n.getLanguage()}.${file_key}`;
+    }
+
+    return translateI18n(i18n.getLanguage(), file, key);
+}
+
+export { translateI18n, translate, trans };

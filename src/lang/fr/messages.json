@@ -2,5 +2,9 @@
     "welcome": "Bienvenue dans notre application !",
     "login": "Veuillez vous connecter pour continuer.",
     "logout": "Vous avez été déconnecté avec succès.",
-    "error": "Une erreur est survenue. Veuillez réessayer plus tard."
+    "error": "Une erreur est survenue. Veuillez réessayer plus tard.",
+    "contact": "N'hésitez pas à nous contacter pour toute demande de renseignements.",
+    "about": "Ceci est une application d'exemple pour démontrer l'internationalisation (i18n) en utilisant Waku.",
+    "idiom": "Ceci est un exemple d'idiome.",
+    "change_language": "Changer de langue"
 }
