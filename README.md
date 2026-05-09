@@ -1,5 +1,7 @@
 # Waku i18n POC
 
+> **⚠️ Proof of Concept**: This project is a proof of concept for i18n (internationalization) implementation with the Waku framework. It demonstrates translation utilities and language switching mechanisms and may be used as a reference for implementing i18n in Waku-based applications.
+
 ## Translation Functions
 
 This project provides three translation utility functions for managing internationalization (i18n). Choose the function that best fits your use case:
